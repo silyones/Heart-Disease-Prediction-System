@@ -1,4 +1,7 @@
 import pandas as pd
+import matplotlib.pyplot as plt
+import seaborn as sns
+
 
 #load the dataset
 df = pd.read_csv("C:\Heart Disease Prediction System/data/raw/heart_cleveland_upload.csv")
@@ -17,3 +20,26 @@ print("describe:", df.describe())
 
 #check how many are missing
 print(df.isnull().sum())
+
+#check duplicate
+print(df.duplicated().sum)
+
+#drop duplicate
+df = df.drop_duplicates()
+
+#check shape after removing duplicate
+print("shape: ", df.shape)
+
+#count each column in condition
+print(df["condition"].value_counts())
+
+#show in percentage
+print(df["condition"].value_counts(normalize=True) *100)
+
+#plot condition
+sns.countplot(data=df, x="condition")
+plt.title("heart disease distribution")
+plt.xlabel("condition (0 = no disease, 1 = disease)")
+plt.ylabel("number of patients")
+plt.savefig("plots/heart disease distribution.png",dpi=300)
+plt.show()
