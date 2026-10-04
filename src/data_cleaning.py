@@ -69,6 +69,6 @@ plt.figure(figsize=(10,6))
 sns.boxplot(data =df[features])
 plt.title("potential outlier")
 plt.xticks(rotation=20)
-plt.savefig("potential outlier.png",dpi=300)
+plt.savefig("plots/potential outlier.png",dpi=300)
 plt.show()
 
