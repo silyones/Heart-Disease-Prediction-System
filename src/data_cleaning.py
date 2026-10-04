@@ -75,10 +75,10 @@ plt.savefig("plots/potential outlier.png",dpi=300)
 plt.show()
 
 #heatmap
-sns.heatplot(correlation, 
-figsize=(10,8),
+sns.heatmap(correlation,
 annot=True,
 cmap="coolwarm",
 fmt=".2f")
 plt.title("feature correlation matrix")
 plt.show()
+
