@@ -53,6 +53,7 @@ df[features].hist(
 
 plt.suptitle("distribution of patients features")
 plt.tight_layout()
+plt.savefig("plots/distribution of patients features.png",dpi=300)
 plt.show()
 
 #plot condition
@@ -68,5 +69,6 @@ plt.figure(figsize=(10,6))
 sns.boxplot(data =df[features])
 plt.title("potential outlier")
 plt.xticks(rotation=20)
+plt.savefig("potential outlier.png",dpi=300)
 plt.show()
 
