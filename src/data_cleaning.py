@@ -43,6 +43,8 @@ print(df.dtypes)
 for col in df.columns:
     print(col, df[col].unique())
 
+correlation = df.corr(numeric_only=True)
+
 #select few numerical features
 features = ["age","trestbps","chol","thalach"]
 df[features].hist(
@@ -72,3 +74,11 @@ plt.xticks(rotation=20)
 plt.savefig("plots/potential outlier.png",dpi=300)
 plt.show()
 
+#heatmap
+sns.heatplot(correlation, 
+figsize=(10,8),
+annot=True,
+cmap="coolwarm",
+fmt=".2f")
+plt.title("feature correlation matrix")
+plt.show()
