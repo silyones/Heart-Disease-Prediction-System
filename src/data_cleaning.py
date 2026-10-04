@@ -60,12 +60,12 @@ plt.show()
 sns.countplot(data=df, x="condition")
 plt.title("heart disease distribution")
 plt.xlabel("condition (0 = no disease, 1 = disease)")
+plt.xticks(rotation=30)
 plt.ylabel("number of patients")
 plt.savefig("plots/heart disease distribution.png",dpi=300)
 plt.show()
 
 #plot boxplot
-plt.figure(figsize=(10,6))
 sns.boxplot(data =df[features])
 plt.title("potential outlier")
 plt.xticks(rotation=20)
