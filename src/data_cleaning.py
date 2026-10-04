@@ -36,6 +36,25 @@ print(df["condition"].value_counts())
 #show in percentage
 print(df["condition"].value_counts(normalize=True) *100)
 
+#check datatype
+print(df.dtypes)
+
+#check columns
+for col in df.columns:
+    print(col, df[col].unique())
+
+#select few numerical features
+features = ["age","trestbps","chol","thalach"]
+df[features].hist(
+    figsize=(10,8),
+    bins=20,
+    edgecolor="black"
+)
+
+plt.suptitle("distribution of patients features")
+plt.tight_layout()
+plt.show()
+
 #plot condition
 sns.countplot(data=df, x="condition")
 plt.title("heart disease distribution")
@@ -43,3 +62,11 @@ plt.xlabel("condition (0 = no disease, 1 = disease)")
 plt.ylabel("number of patients")
 plt.savefig("plots/heart disease distribution.png",dpi=300)
 plt.show()
+
+#plot boxplot
+plt.figure(figsize=(10,6))
+sns.boxplot(data =df[features])
+plt.title("potential outlier")
+plt.xticks(rotation=20)
+plt.show()
+
