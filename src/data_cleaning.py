@@ -82,3 +82,6 @@ fmt=".2f")
 plt.title("feature correlation matrix")
 plt.show()
 
+#save cleaned dataset
+df.to_csv("data/processed/heart_disease_cleaned.csv")
+print(df.shape)
