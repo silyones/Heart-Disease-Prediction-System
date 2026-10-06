@@ -21,7 +21,7 @@ x_train, y_train, x_test, y_test = train_test_split(
     stratify=y
 )
 
-#list all the numerical features
+#list all the numerical features — StandarScalar
 numerical_features=[
     "age",
     "trestbps",
@@ -29,4 +29,16 @@ numerical_features=[
     "thalach",
     "oldpeak"]
 
-#list all categorical features
+#list all categorical features — OneHotEncoder
+categorical_features=[
+    "sex",
+    "cp",
+    "fbs",
+    "restecg",
+    "exang",
+    "slope",
+    "ca",
+    "thal"
+]
+
+#numerical features
