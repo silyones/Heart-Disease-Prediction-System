@@ -46,6 +46,7 @@ for col in df.columns:
 
 correlation = df.corr(numeric_only=True)
 
+'''
 #select few numerical features
 features = ["age","trestbps","chol","thalach"]
 df[features].hist(
@@ -83,6 +84,8 @@ fmt=".2f")
 plt.title("feature correlation matrix")
 plt.show()
 
+'''
+
 #save cleaned dataset
 df.to_csv("data/processed/heart_disease_cleaned.csv")
 print(df.shape)
@@ -106,3 +109,5 @@ x_train, x_test, y_train, y_test = train_test_split(
 
 print("training data:", x_train.shape)
 print("testing data:", x_test.shape)
+
+#count 
