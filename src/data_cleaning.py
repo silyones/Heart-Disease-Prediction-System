@@ -110,4 +110,6 @@ x_train, x_test, y_train, y_test = train_test_split(
 print("training data:", x_train.shape)
 print("testing data:", x_test.shape)
 
-#count 
+#count conditions
+print("y train: ", y_train.value_counts(normalize=True))
+print("y test: ", y_test.value_counts(normalize=True))
