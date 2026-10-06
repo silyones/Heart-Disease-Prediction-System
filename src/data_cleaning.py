@@ -2,6 +2,7 @@ import pandas as pd
 import matplotlib.pyplot as plt
 import seaborn as sns
 from sklearn.model_selection import train_test_split
+from sklearn.preprocessing import StandardScaler
 
 
 #load the dataset
@@ -90,26 +91,3 @@ plt.show()
 df.to_csv("data/processed/heart_disease_cleaned.csv")
 print(df.shape)
 
-#seperate feature  (X) and targe (Y)
-x = df.drop("condition", axis=1)
-y = df["condition"]
-
-#print their shape
-print("x features shape: ", x.shape)
-print("y label shape: ", y.shape)
-
-
-x_train, x_test, y_train, y_test = train_test_split(
-   x,
-   y,
-   test_size=0.2,
-   random_state=42,
-   stratify=y
-)
-
-print("training data:", x_train.shape)
-print("testing data:", x_test.shape)
-
-#count conditions
-print("y train: ", y_train.value_counts(normalize=True))
-print("y test: ", y_test.value_counts(normalize=True))
