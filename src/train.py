@@ -50,5 +50,11 @@ preprocessor = ColumnTransformer(
 )
 
 #create logestic regerssion pipeline
+logestic_model=Pipeline(
+    steps=[
+        ("preprocessor",preprocessor),
+        ("model",LogisticRegression(max_iter=1000))
+    ]
+)
 
-
+logestic 
