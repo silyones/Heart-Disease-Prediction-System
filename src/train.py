@@ -41,4 +41,14 @@ categorical_features=[
     "thal"
 ]
 
-#numerical features
+#preprocessing
+preprocessor = ColumnTransformer(
+    transformers=[
+        ("num",StandardScaler(),numerical_features),
+        ("cat",OneHotEncoder(),categorical_features)
+    ]
+)
+
+#create logestic regerssion pipeline
+
+
