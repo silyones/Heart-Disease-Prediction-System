@@ -4,6 +4,12 @@ from sklearn.preprocessing import StandardScaler, OneHotEncoder
 from sklearn.compose import ColumnTransformer
 from sklearn.pipeline import Pipeline
 from sklearn.linear_model import LogisticRegression
+from sklearn.metrics import(
+    accuracy_score,
+    precision_score,
+    recall_score,
+    confusion_matrix
+)
 
 #load csv
 df = pd.read_csv("data/processed/heart_disease_cleaned.csv")
@@ -65,3 +71,22 @@ y_pred = logistic_model.predict(x_test)
 
 #display some predictions
 print("model predictions",y_pred[:10])
+
+#calculate accuracy
+accuracy = accuracy_score(y_test,y_pred)
+print("accuracy",accuracy)
+#result : accuracy 0.9166666666666666
+
+#precision score
+precision = precision_score(y_test,y_pred)
+print("precision: ",precision)
+#value: 1.0
+
+#recall
+recall = recall_score(y_test,y_pred)
+print("recall: ",recall)
+#values:0.8214285714285714
+
+#confusion matrix
+cm = confusion_matrix(y_test,y_pred)
+print("confusion matrix: ",cm)
