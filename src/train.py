@@ -50,11 +50,18 @@ preprocessor = ColumnTransformer(
 )
 
 #create logestic regerssion pipeline
-logestic_model=Pipeline(
+logistic_model=Pipeline(
     steps=[
         ("preprocessor",preprocessor),
         ("model",LogisticRegression(max_iter=1000))
     ]
 )
 
-logestic 
+#train model
+logistic_model.fit(x_train,y_train)
+
+#after the model is trained, it needs to predict on x_test
+y_pred = logistic_model.predict(x_test)
+
+#display some predictions
+print("model predictions",y_pred[:10])
