@@ -13,7 +13,7 @@ x = df.drop("condition", axis=1)
 y = df["condition"]
 
 #create a split
-x_train, y_train, x_test, y_test = train_test_split(
+x_train, x_test, y_train, y_test = train_test_split(
     x,
     y,
     test_size=0.2,
