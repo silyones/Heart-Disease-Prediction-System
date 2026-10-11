@@ -90,3 +90,13 @@ print("recall: ",recall)
 #confusion matrix
 cm = confusion_matrix(y_test,y_pred)
 print("confusion matrix: ",cm)
+
+'''
+model predictions [0 0 0 0 0 0 1 0 1 0]
+accuracy 0.9166666666666666
+precision:  1.0
+recall:  0.8214285714285714
+confusion matrix:  [[32  0]
+ [ 5 23]]
+
+'''
