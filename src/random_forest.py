@@ -26,7 +26,7 @@ x_train,x_test,y_train,y_test = train_test_split(
 
 #create a random forest model
 rf_model = RandomForestClassifier(
-    n_estimators = 100,
+    n_estimators = 900,
     random_state = 42
 )
 
