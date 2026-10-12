@@ -4,7 +4,6 @@ import seaborn as sns
 from sklearn.model_selection import train_test_split
 from sklearn.preprocessing import StandardScaler
 
-
 #load the dataset
 df = pd.read_csv("C:\Heart Disease Prediction System/data/raw/heart_cleveland_upload.csv")
 
@@ -47,7 +46,6 @@ for col in df.columns:
 
 correlation = df.corr(numeric_only=True)
 
-'''
 #select few numerical features
 features = ["age","trestbps","chol","thalach"]
 df[features].hist(
@@ -84,8 +82,6 @@ cmap="coolwarm",
 fmt=".2f")
 plt.title("feature correlation matrix")
 plt.show()
-
-'''
 
 #save cleaned dataset
 df.to_csv("data/processed/heart_disease_cleaned.csv")
