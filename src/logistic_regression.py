@@ -91,6 +91,10 @@ print("recall: ",recall)
 cm = confusion_matrix(y_test,y_pred)
 print("confusion matrix: ",cm)
 
+
+print(df["condition"].value_counts())
+print(df.groupby("condition").mean(numeric_only=True))
+
 '''
 model predictions [0 0 0 0 0 0 1 0 1 0]
 accuracy 0.9166666666666666

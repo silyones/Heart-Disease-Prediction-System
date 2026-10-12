@@ -67,3 +67,14 @@ print("Test Accuracy:", accuracy)
 print("Test Precision:", precision)
 print("Test Recall:", recall)
 print("Confusion Matrix:", cm)
+
+'''output:
+best param :  {'class_weight': 'balanced', 'max_depth': 5, 'max_features': 'sqrt', 'min_samples_leaf': 4, 'min_samples_split': 10, 'n_estimators': 100}
+best score:  0.78008658008658
+Test Accuracy: 0.8166666666666667
+Test Precision: 0.8695652173913043
+Test Recall: 0.7142857142857143
+Confusion Matrix: [[29  3]
+ [ 8 20]]
+ '''
+ 
