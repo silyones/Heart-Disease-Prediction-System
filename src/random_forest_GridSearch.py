@@ -19,7 +19,7 @@ y = df["condition"]
 x_train,x_test,y_train,y_test = train_test_split(
     x,
     y,
-    test_split = 0.2,
+    test_size = 0.2,
     random_state = 42,
     stratify = y
 )
@@ -46,7 +46,7 @@ grid_search = GridSearchCV(
     n_jobs = -1
 )
 
-grid_search.fit(x_train,x_test)
+grid_search.fit(x_train,y_train)
 
 #print best param
 print("best param : ", grid_search.best_params_)
