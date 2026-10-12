@@ -46,3 +46,24 @@ grid_search = GridSearchCV(
     n_jobs = -1
 )
 
+grid_search.fit(x_train,x_test)
+
+#print best param
+print("best param : ", grid_search.best_params_)
+print("best score: ", grid_search.best_score_)
+
+#select the best estimator
+best_model = grid_search.best_estimator_
+
+#cal y predict
+y_pred = best_model.predict(x_test)
+
+accuracy = accuracy_score(y_test, y_pred)
+precision = precision_score(y_test, y_pred)
+recall = recall_score(y_test, y_pred)
+cm = confusion_matrix(y_test, y_pred)
+
+print("Test Accuracy:", accuracy)
+print("Test Precision:", precision)
+print("Test Recall:", recall)
+print("Confusion Matrix:", cm)
