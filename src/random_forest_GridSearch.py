@@ -10,3 +10,8 @@ from sklearn.metrics import (
 
 #load dataset
 df = pd.read_csv("data/processed/heart_disease_cleaned.csv")
+
+#seperate x and y
+x = df.drop("condition", axis = 1)
+y = df["condition"]
+
