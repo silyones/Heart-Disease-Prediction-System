@@ -27,3 +27,22 @@ x_train,x_test,y_train,y_test = train_test_split(
 #create a rf model
 rf_model = RandomForestClassifier(random_state = 42)
 
+#hyperparameters
+param_grid = {
+    "n_estimators" : [100,300],
+    "max_depth" : [None, 5, 10],
+    "min_samples_split" : [2,5,10],
+    "min_samples_leaf" : [1,2,4],
+    "max_features" : ["sqrt", "log2"],
+    "class_weight" : [None, "balanced"]
+}
+
+#grid search
+grid_search = GridSearchCV(
+    estimator = rf_model,
+    param_grid = param_grid,
+    cv = 5,
+    scoring = "recall",
+    n_jobs = -1
+)
+
